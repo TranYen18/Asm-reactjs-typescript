@@ -29,7 +29,7 @@ const AdminLayout = (props: Props) => {
 
                         </div>
                         <div className="">
-                            <Link to={`/admin/product/add`} className="btn btn-primary">Thêm mới</Link>
+                            <Link to={`/admin/product/add`} className="btn btn-primary">ADD</Link>
 
                         </div>
                         <br />

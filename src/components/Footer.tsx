@@ -5,7 +5,7 @@ type Props = {}
 const Footer = (props: Props) => {
     return (
         <div>
-            <div className="">
+            <div className="container-full">
                 <footer style={{ backgroundColor: '#F0E68C' }}>
                     <div className="container p-4">
                         <div className="row">
@@ -34,33 +34,38 @@ const Footer = (props: Props) => {
                             </div>
                             
                             <div className="col-lg-3 col-md-6 mb-4">
-                                <h5 className="mb-1" style={{ letterSpacing: 2, color: '#20B2AA' }}>Opening hours</h5>
+                                <h5 className="mb-1" style={{ letterSpacing: 2, color: '#20B2AA' }}>COMPANY</h5>
                                 <table className="table" style={{ color: '#4f4f4f', borderColor: '#666' }}>
                                     <tbody>
-                                        <tr>
-                                            <td>Mon - Fri:</td>
-                                            <td>8am - 9pm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sat - Sun:</td>
-                                            <td>8am - 1am</td>
-                                        </tr>
+                                       
+                                    <ul className="list-unstyled mb-0">
+                                    <li className="mb-1">
+                                        <a href="" style={{ color: '#4f4f4f' }}>About</a>
+                                    </li>
+                                    <li className="mb-1">
+                                        <a href="" style={{ color: '#4f4f4f' }}>Privacy Policy</a>
+                                    </li>
+                                    <li className="mb-1">
+                                        <a href="" style={{ color: '#4f4f4f' }}>Terms and Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a href="" style={{ color: '#4f4f4f' }}>Licenses</a>
+                                    </li>
+                                </ul>
                                     </tbody>
                                 </table>
                             </div>
+                            
                         </div>
                     </div>
                     <div className="text-center p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
                         © 2022 Copyright:
                         <a className="text-dark" href="https://mdbootstrap.com/">Design by Calisto</a>
                     </div>
-                    {/* Copyright */}
+                   
                 </footer>
             </div>
-            {/*End of.container-- >
-    )
-}
-*/}</div>
+            </div>
     )
 }
 

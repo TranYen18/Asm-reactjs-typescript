@@ -11,7 +11,8 @@ type ProductEditProps = {
 
 type FormInputs = {
     name: string,
-    price: number
+    price: number,
+    desc: string
 }
 
 const ProductEdit = (props: ProductEditProps) => {
@@ -43,6 +44,10 @@ const ProductEdit = (props: ProductEditProps) => {
                 <div className="mb-3">
                     <label className="form-label">Price</label>
                     <input type="number" className="form-control"  {...register('price')} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Desc</label>
+                    <input type="text" className="form-control"  {...register('desc')} />
                 </div>
                 <button className="btn btn-primary">Update</button>
             </form>

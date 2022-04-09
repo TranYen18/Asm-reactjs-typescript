@@ -10,7 +10,7 @@ type HomePageProps = {
 const Homepage = (props: HomePageProps) => {
     return (
         <div>
-            <Banner />
+            
             <ProductList products={props.products} />
         </div>
     )

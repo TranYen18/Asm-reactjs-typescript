@@ -18,6 +18,7 @@ const ProductManager = (props: ProductManagerProps) => {
                         <th>STT</th>
                         <th>Tên sản phẩm</th>
                         <th>Giá</th>
+                        <th>Mô Tả</th>
                         <th>Thao tác</th>
                     </tr>
                 </thead>
@@ -27,6 +28,7 @@ const ProductManager = (props: ProductManagerProps) => {
                             <td>{index + 1}</td>
                             <td>{item.name}</td>
                             <td>{item.price}</td>
+                            <td>{item.desc}</td>
                             <td>
                                 <Link className='btn btn-outline-success' to={`/admin/product/${item._id}/edit` }>Editor</Link>
                                 <br />

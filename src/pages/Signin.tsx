@@ -5,6 +5,7 @@ import { signin, signup } from '../api/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
+
 type FormInputs = {
     email: string,
     password: string | number
@@ -26,21 +27,26 @@ const Signin = () => {
         }
     }
     return (
-        <div className="container my-5">
+        <div className='container my-5'  >
 
-            <form onSubmit={handleSubmit(onSumbit)}>
-                <div className="mb-3">
+            <form onSubmit={handleSubmit(onSumbit)} className='w-full sm:w-[250px] p-4 mx-auto flex flex-col bg-gray-200 rounded-md'>
+                <div className="md-3 ">
                     <label className="form-label">Email</label>
-                    <input type="email" className="form-control"  {...register('email')} />
+                    <input type="email" className="form-control px-3 py-2.5 mb-3 border-2 border-gray-800 rounded-md"  {...register('email')} />
                 </div>
-                <div className="mb-3">
+                <div className="md-3">
                     <label className="form-label">Password</label>
-                    <input type="password" className="form-control"  {...register('password')} />
+                    <input type="password" className="form-control px-3 py-2.5 mb-3 border-2 border-gray-800 rounded-md"  {...register('password')} />
                 </div>
-                <button className="btn btn-primary">Đăng nhập</button>
+                <button className="btn btn-primary px-2 py-1.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white mt-3">Đăng nhập</button>
             </form>
+
+           
+         
+ 
             <ToastContainer />
         </div>
+
     )
 }
 

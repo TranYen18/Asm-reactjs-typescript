@@ -19,10 +19,10 @@ const ProductList = ({ products }: ProductListProps) => {
                         <div className="col-3" key={index}>
                             <div className="card"  >
                                 <img src="http://u611338.webmienphi.vn/files/sanpham/16/1/jpg/dkny-be-delicious.jpg"  className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">{product.name}</h5>
-                                    <span className="block">{product.price}</span>
-                                    <Link to={`/product/${product._id}`} className="btn btn-primary margin-left: 80px; ">Chi Tiết</Link>
+                                <div className="card-body text-center">
+                                    <h5 className="card-title text-center">{product.name}</h5>
+                                    <span className="block">{product.price}</span><br />
+                                    <Link to={`/product/${product._id}`} className="btn btn-primary bg-teal-400 ">Chi tiết sản phẩm</Link>
                                 </div>
                             </div>
 

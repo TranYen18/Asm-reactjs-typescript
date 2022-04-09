@@ -5,31 +5,31 @@ type Props = {}
 
 const Sidebar = (props: Props) => {
     return (
-        <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-info sidebar collapse">
             <div className="position-sticky pt-3">
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="/admin/dashboard">
+                        <NavLink className="nav-link text-white" aria-current="page" to="/admin/dashboard">
                             Dashboard
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="/admin/category">
+                        <NavLink className="nav-link active text-white" aria-current="page" to="/admin/category">
                             Category
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="/admin/product">
-                            Product
+                        <NavLink className="nav-link active text-white" style={{}} aria-current="page" to="/admin/product">
+                            Products
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="#">
+                        <NavLink className="nav-link active text-white" aria-current="page" to="#">
                             Setting
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link active" aria-current="page" to="#">
+                        <NavLink className="nav-link active text-white"  aria-current="page" to="#">
                             Support
                         </NavLink>
                     </li>
