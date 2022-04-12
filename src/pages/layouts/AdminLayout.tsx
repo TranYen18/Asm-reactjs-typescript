@@ -28,10 +28,7 @@ const AdminLayout = (props: Props) => {
                             <h1 className="h2">Dashboard</h1>
 
                         </div>
-                        <div className="">
-                            <Link to={`/admin/product/add`} className="btn btn-primary">ADD</Link>
-
-                        </div>
+                        
                         <br />
                         <Outlet />
                     </main>

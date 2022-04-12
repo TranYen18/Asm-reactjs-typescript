@@ -1,53 +1,48 @@
-import React, { useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom';
-import { ProductType } from '../../type/Product';
-import {Table,Button,Tag,Space} from 'antd';
-
-
-import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
-import { TypeCategory } from '../../type/category';
+import React from 'react'
+import { Link } from 'react-router-dom';
+import { TypeCategory } from '../../type/category'
+import { isAuthenticate } from '../../utils/localStorage';
 
 type CategoryManagerProps = {
-  onRemoveCate: (desc: any) => void
-  category: TypeCategory[];
+    categories: TypeCategory[];
+    onRemoveCategory: (id: number, user: any, token: any) => void
 }
-const columns = [
-  {
-    title: 'Number',
-    dataIndex: 'number',
-    key: 'number'
-  },
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name'
-  },
-  {
-    title: 'Action',
-    dataIndex: 'action',
-    key: 'action'
-  }
-]
 
 const CategoryManager = (props: CategoryManagerProps) => {
-  const dataSource = props.category.map((item, index) => {
-    return {
-      key: index + 1,
-      number: index + 1,
-      name: item.name,
-      action: <div>
-        <Button className='button-action' onClick={() => props.onRemoveCate(item.desc)} type="primary" danger size='large'>Delete</Button>
-        <Button className='button-action' type="primary" size='large'><Link to={`/admin/categories/${item.desc}/edit`}>Edit</Link></Button>
-      </div>
-    }
-  })
-  return (
-    <div>
-      <Table columns={columns} dataSource={dataSource} />
-    </div>
-  )
-}
+    const { user, token } = isAuthenticate()
+    return (
+        <div>
+            <div className="">
+                <Link to={`/admin/category/add`} className="btn btn-primary">Thêm mới</Link>
 
+            </div>
+            <br />
+            <table className="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Danh mục sản phẩm</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {props.categories.map((item, index) => {
+                        return <tr key={index}>
+                            <td>{index + 1}</td>
+                            <td>{item.name}</td>
+                            <td>
+                                <Link to={`/admin/category/${item._id}/edit`} className="btn btn-success">Editor</Link>
+                            </td>
+                            <td>
+                                <button onClick={() => props.onRemoveCategory(item._id, user, token)} className="btn btn-danger">Remove</button>
+                            </td>
+                        </tr>
+                    })}
+                </tbody>
+            </table>
+        </div>
+    )
+}
 
 export default CategoryManager

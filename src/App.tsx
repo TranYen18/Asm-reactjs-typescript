@@ -12,9 +12,9 @@ import Adminlayout from './pages/layouts/AdminLayout';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import { toast, ToastContainer } from 'react-toastify';
-import ProductAdd from './pages/ProductAdd';
-import ProductManager from './pages/ProductManager';
-import ProductEdit from './pages/ProductEdit';
+import ProductAdd from './pages/admin/ProductAdd';
+import ProductManager from './pages/admin/ProductManager';
+import ProductEdit from './pages/admin/ProductEdit';
 
 
 function App() {

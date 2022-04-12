@@ -1,17 +1,25 @@
 import React from 'react'
-import { ProductType } from '../type/Product';
+import { ProductType } from '../../type/Product';
 import { Link } from 'react-router-dom'
+import {TypeCategory} from '../../type/category'
+import { isAuthenticate } from '../../utils/localStorage';
 
 
 type ProductManagerProps = {
     products: ProductType[];
-    onRemove: (id: number) => void
+    categories: TypeCategory[];
+    onRemove: (id: number , token: any, user :any) => void
 }
 
 const ProductManager = (props: ProductManagerProps) => {
+    const {user, token} = isAuthenticate()
     return (
         <div>
             <h2>Danh sách sản phẩm</h2>
+            <div className="">
+                <Link to={`/admin/product/add`} className="btn btn-primary">Thêm mới</Link>
+
+            </div>
             <table className="table table-bordered">
                 <thead>
                     <tr>
@@ -19,7 +27,9 @@ const ProductManager = (props: ProductManagerProps) => {
                         <th>Tên sản phẩm</th>
                         <th>Giá</th>
                         <th>Mô Tả</th>
+                        <th>Danh Mục</th>
                         <th>Thao tác</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +39,7 @@ const ProductManager = (props: ProductManagerProps) => {
                             <td>{item.name}</td>
                             <td>{item.price}</td>
                             <td>{item.desc}</td>
+                            <td>{item.category}</td>
                             <td>
                                 <Link className='btn btn-outline-success' to={`/admin/product/${item._id}/edit` }>Editor</Link>
                                 <br />
